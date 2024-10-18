@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identificador de Nacionalidade</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+
+        body {
+            font: normal 18pt Arial;
+            background-image: linear-gradient(to bottom, blue, darkblue);
+            width: 100%;
+            height: 100vh;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 2px 2px 5px black;
+            margin: 10px;
+        }
+
+        aside {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input#txt {
+            height: 1.6rem;
+            width: 15rem;
+            padding: 4px;
+            outline: none;
+        }
+
+        #btt {
+            margin-top: 15px;
+            width: 200px;
+            cursor: pointer;
+        }
+
+        #ress {
+            width: 100vh;
+            color: white;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <article>
+          <h1>Descubra Se Você é Estrangeiro</h1>
+        </article>
+        <aside>
+          <input type='text' placeholder='Qual o seu país?' name='txt' id='txt'>
+          <span class='pai-ress'>
+            <input type='button' value='Consultar' name='btt' id='btt' onclick='clicar()'></input>
+            <p id='ress'>Resultado...</p>
+          </span>
+        </aside>
+      </main>
+
+      <script>
+        function clicar() {
+            let pais = document.getElementById('txt')
+            let ress = document.getElementById('ress')
+            let paisValue = pais.value
+            
+            if (paisValue == 'Brasil') {
+                ress.innerHTML = `Você é brasileiro!`
+            } else if (paisValue == null || paisValue == "") {
+                ress.innerHTML = 'Por favor, digite o seu país!'
+            } else {
+                ress.innerHTML = 'Você é estrangeiro!'
+            }
+        }
+      </script>
+</body>
+</html>
